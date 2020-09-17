@@ -1,0 +1,40 @@
+.scheduler-unit{
+    background-color: #29657d;
+    border: 2px solid blue;
+    padding: 20px;
+    width: 124px;
+    height: 40px;
+    max-height: 20px;
+    text-overflow: ellipsis;
+    text-align: center;
+    text-justify: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    color: white;
+    
+}
+
+
+.scheduler-unit-event{
+    background-color:transparent;
+    border: 2px solid transparent;
+    padding: 20px;
+    width: 124px;
+    height: 40px;
+    max-height: 20px;
+    text-overflow: ellipsis;
+    text-align: center;
+    text-justify: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    color: white;
+}
+.scheduler-unit-selectable{
+    cursor: pointer;
+}
