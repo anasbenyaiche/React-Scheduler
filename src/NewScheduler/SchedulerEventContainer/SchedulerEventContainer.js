@@ -1,9 +1,10 @@
 import React from 'react'
 
-const SchedulerEventContainer = () => {
+
+const SchedulerEventContainer = ({EventDuration}) => {
 
 
-    return (<div> Scheduler Event Container </div>)
+    return (<div style={{height:EventDuration,position:'absolut',zIndex:"1"}}  > </div>)
 }
 
 export default SchedulerEventContainer
