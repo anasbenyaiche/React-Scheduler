@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react";
+import SchedulerEventUnit from "../SchedulerEventUnit/SchedulerEventUnit";
 
+const SchedulerEventContainer = ({ bookingEvents }) => {
+  return (
+    <React.Fragment>
+      {bookingEvents.map((bookingEvent) => (
+        <SchedulerEventUnit>{bookingEvent}</SchedulerEventUnit>
+      ))}
+    </React.Fragment>
+  );
+};
 
-const SchedulerEventContainer = ({EventDuration}) => {
-
-
-    return (<div style={{height:EventDuration,position:'absolut',zIndex:"1"}}  > </div>)
-}
-
-export default SchedulerEventContainer
+export default SchedulerEventContainer;

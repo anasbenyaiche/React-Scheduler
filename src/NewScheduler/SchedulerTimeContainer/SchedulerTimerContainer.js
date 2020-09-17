@@ -55,7 +55,7 @@ const SchedulerTimeContainer = () => {
   const [event, setEvent] = useState([]);
   return (
     <div
-      style={{ border: "3px solid green", display: "flex", overflowY: "auto" }}
+      style={{ border: "", display: "flex", overflowY: "auto" }}
     >
       <div className="calendar-time-container">
         <SchedulerUnit />

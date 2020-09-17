@@ -7,7 +7,7 @@ const SchedulerUnit = ({ children, onClickUnit, isSelectable, isAnEvent }) => {
       className="scheduler-single-unit-container"
       style={{ border: "1px solid black", padding: "5px" }}
     >
-      <div 
+      <div
         className={`  ${
           isAnEvent ? "scheduler-unit-event" : "scheduler-unit"
         } ${isSelectable ? "scheduler-unit-selectable" : null}`}
