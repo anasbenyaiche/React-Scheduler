@@ -37,6 +37,9 @@ const CalendarToolBar = ({ view, onNavigate }) => {
           Next day
         </button>
       </div>
+      <button type="button" style={{borderRadius:"50%",fontSize:"25px"}} className="btn btn-danger">
+        +
+      </button>
     </div>
   );
 };
