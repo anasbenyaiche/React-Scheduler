@@ -1,5 +1,5 @@
 import React from "react";
-import SchedulerEventUnit from "../SchedulerEventUnit/SchedulerEventUnit";
+import SchedulerEventUnit from "../../components/SchedulerEventUnit/SchedulerEventUnit";
 import PropTypes from "prop-types";
 import { convertTimeSlotFormat } from "../../helpers/convertTimeSlot";
 
