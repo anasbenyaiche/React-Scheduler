@@ -1,9 +1,9 @@
 import React from "react";
 import "./SchedulerUnit.scss";
 
-const SchedulerUnit = ({ children, onClickUnit, isSelectable, isAnEvent }) => {
+const SchedulerUnit = ({ children, onClickUnit, isSelectable, isAnEvent,unitKey }) => {
   return (
-    <div
+    <div key={unitKey}
       className="scheduler-single-unit-container"
       style={{ border: "1px solid black", padding: "5px" }}
     >

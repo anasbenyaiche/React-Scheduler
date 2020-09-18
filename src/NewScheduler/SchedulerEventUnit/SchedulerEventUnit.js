@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import propTypes from 'prop-types'
 
 const SchedulerElementStyled = styled.div`
   font-size: 11px;
@@ -39,6 +40,12 @@ const SchedulerEventUnit = ({ start, end, children }) => {
       </SchedulerElementStyled>
     </div>
   );
-};
+}
+
+SchedulerEventUnit.propTypes={
+  start: propTypes.string,
+  end: propTypes.string,
+  
+}
 
 export default SchedulerEventUnit;
