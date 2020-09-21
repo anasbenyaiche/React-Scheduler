@@ -5,8 +5,6 @@ import "./SchedulerTimeContainer.scss";
 import { hoursPerDay } from "../../constant/hoursPerDay";
 
 const SchedulerTimeContainer = ({ resource, date }) => {
-
-
   const timeColumn = hoursPerDay.map((timeInHour) => (
     <SchedulerUnit>{timeInHour}</SchedulerUnit>
   ));

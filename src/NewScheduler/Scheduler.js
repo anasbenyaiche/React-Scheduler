@@ -3,6 +3,13 @@ import React, { useEffect, useState } from "react";
 import SchedulerTimeContainer from "../containers/SchedulerTimeContainer/SchedulerTimerContainer";
 import { dateFormatter } from "../helpers/dateFomatter";
 import "./ScheluderToolBar/SchedulerToolBar.scss";
+import "date-fns";
+
+import DateFnsUtils from "@date-io/date-fns";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from "@material-ui/pickers";
 
 const resourceMap = [
   {
@@ -63,7 +70,13 @@ const Scheduler = () => {
     addOrsubstractDate(daysCounter);
   }, [daysCounter]);
 
-  console.log(date);
+  const handleDateChange = (newDate) => {
+    newDate.setHours(0, 0, 0, 0) > date.setHours(0, 0, 0, 0)
+      ? setDayCounter(daysCounter + moment(newDate).diff(moment(date), "days"))
+      : setDayCounter(daysCounter - moment(date).diff(moment(newDate), "days"));
+  };
+
+
 
   return (
     <div style={{ width: "98vw", overflowX: "auto" }}>
@@ -75,6 +88,20 @@ const Scheduler = () => {
         </span>
         <h2> {dateFormatter(date)}</h2>
         <div className="calendar-toolbar-navigation-container">
+          <div>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <KeyboardDatePicker
+                margin="normal"
+                id="date-picker-dialog"
+                format="MM-dd-yyyy"
+                value={date}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                  "aria-label": "change date",
+                }}
+              />
+            </MuiPickersUtilsProvider>
+          </div>
           <button
             type="button"
             className="calender-toolbar-button "

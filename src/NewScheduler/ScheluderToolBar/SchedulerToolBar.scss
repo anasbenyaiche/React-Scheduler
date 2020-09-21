@@ -7,6 +7,7 @@ $active-border: gray;
 $today-highlight-bg: #eaf6ff !default;
 .calendar-toolbar-container {
   display: flex;
+  align-items: center;
   justify-content: space-around;
   padding: 1%;
 

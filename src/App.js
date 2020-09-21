@@ -1,7 +1,6 @@
 import React from "react";
 import Scheduler from "./NewScheduler/Scheduler.js";
 
-
 function App() {
   return (
     <div className="App">
