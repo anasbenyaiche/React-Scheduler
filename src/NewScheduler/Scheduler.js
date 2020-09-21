@@ -1,8 +1,8 @@
 import moment from "moment";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SchedulerTimeContainer from "../containers/SchedulerTimeContainer/SchedulerTimerContainer";
-import { convertDate } from "../helpers/covertDate";
-import CalendarToolBar from "./ScheluderToolBar/SchedulerToolBar";
+import { dateFormatter } from "../helpers/dateFomatter";
+import "./ScheluderToolBar/SchedulerToolBar.scss";
 
 const resourceMap = [
   {
@@ -46,32 +46,76 @@ const resourceMap = [
   { resourceId: 8, resourceTitle: "Vortex" },
 ];
 
-
-const localizer = convertDate(new Date(moment().valueOf()))
+const localizer = new Date(moment().valueOf());
 
 const Scheduler = () => {
-  const [date, setDate] = useState(localizer)
+  const [date, setDate] = useState(localizer);
+  const [daysCounter, setDayCounter] = useState(0);
 
-  const changeDate = (type,date) => {
-    switch(type){
-      case 'SUBSTRACT_DAY':
-        return date = moment().subtract(1, 'days');
-      case 'ADD_DAY':
-        return date = moment().add(1,'days');
-      default:
-        return date;  
+  useEffect(() => {
+    const addOrsubstractDate = (counter) => {
+      counter === 0
+        ? setDate(localizer)
+        : counter === daysCounter + 1
+        ? setDate(new Date(moment().subtract(counter, "days")))
+        : setDate(new Date(moment().add(counter, "days")));
+    };
+    addOrsubstractDate(daysCounter);
+  }, [daysCounter]);
 
+  console.log(date);
 
-    }
-  }
-
-
-
-  console.log(date)
   return (
-    <div style={{ width: "98vw", overflowX:"auto"}}>
+    <div style={{ width: "98vw", overflowX: "auto" }}>
       <h1> This is the Scheduler page</h1>
-      <CalendarToolBar  />
+      {/* testing Scheduler Toolbar */}
+      <div className="calendar-toolbar-container">
+        <span>
+          <h2>Lab Manager</h2>
+        </span>
+        <h2> {dateFormatter(date)}</h2>
+        <div className="calendar-toolbar-navigation-container">
+          <button
+            type="button"
+            className="calender-toolbar-button "
+            onClick={() => {
+              setDayCounter(0);
+              // setDate(localizer);
+            }}
+          >
+            Today
+          </button>
+          <button
+            type="button"
+            className="calender-toolbar-button "
+            onClick={() => {
+              setDayCounter(daysCounter - 1);
+              // setDate(new Date(moment().subtract(daysCounter, "days")));
+            }}
+          >
+            Previous day
+          </button>
+          <button
+            type="button"
+            className="calender-toolbar-button "
+            onClick={() => {
+              setDayCounter(daysCounter + 1);
+              // setDate(new Date(moment().add(daysCounter, "days")));
+            }}
+          >
+            Next day
+          </button>
+        </div>
+        <button
+          type="button"
+          style={{ borderRadius: "50%", fontSize: "25px" }}
+          className="btn btn-danger"
+        >
+          +
+        </button>
+      </div>
+
+      {/* the component */}
       <SchedulerTimeContainer resource={resourceMap} />
     </div>
   );
