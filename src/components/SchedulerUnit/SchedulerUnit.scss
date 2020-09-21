@@ -1,4 +1,6 @@
-.scheduler-unit{
+.scheduler-single-unit-container {
+  padding: 5px;
+  .scheduler-unit {
     background-color: #29657d;
     border: 2px solid blue;
     padding: 20px;
@@ -12,14 +14,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex:1;
+    flex: 1;
     color: white;
-    
-}
+    -webkit-box-shadow: 10px 11px 18px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 11px 18px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 11px 18px -10px rgba(0, 0, 0, 0.75);
+  }
 
-
-.scheduler-unit-event{
-    background-color:transparent;
+  .scheduler-unit-event {
+    background-color: transparent;
     border: 2px solid transparent;
     padding: 20px;
     width: 124px;
@@ -32,9 +35,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex:1;
+    flex: 1;
     color: white;
-}
-.scheduler-unit-selectable{
+  }
+  .scheduler-unit-selectable {
     cursor: pointer;
+  }
 }

@@ -10,7 +10,9 @@ $today-highlight-bg: #eaf6ff !default;
   align-items: center;
   justify-content: space-around;
   padding: 1%;
-
+  // .MuiInputBase-input,.MuiInput-input,.MuiInputBase-inputAdornedEnd{
+  //   display: none;
+  // }
   .calender-toolbar-button {
     color: $btn-color;
     display: inline-block;

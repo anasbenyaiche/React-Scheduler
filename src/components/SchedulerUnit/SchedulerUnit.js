@@ -5,7 +5,7 @@ const SchedulerUnit = ({ children, onClickUnit, isSelectable, isAnEvent,unitKey 
   return (
     <div key={unitKey}
       className="scheduler-single-unit-container"
-      style={{ border: "1px solid black", padding: "5px" }}
+      style={{  padding: "5px" }}
     >
       <div
         className={`  ${

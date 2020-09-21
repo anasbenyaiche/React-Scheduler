@@ -50,7 +50,7 @@ let fromSeconds =Math.floor((end- toMinutes*60)/60)
     fromSeconds,
   };
 
-  console.log(decomposeTime)
+
 //   `${fromHours}:${fromMinutes}:${}- ${}:${}:${} `
   return decomposeTime
 

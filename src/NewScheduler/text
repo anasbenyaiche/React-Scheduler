@@ -1,0 +1,37 @@
+********************************************************
+event
+
+id:"de07f824-8a8e-4c8d-b43b-010878a84a13"
+createdAt:"2020-08-26T10:51:33.944Z"
+updatedAt:"2020-08-26T10:51:33.944Z"
+title:"Test event"
+eventDate:"2020-09-01"
+
+*******************************************************
+Tool
+
+id:"c1166ed5-a794-460f-8f00-b0b3aa2dfcef"
+createdAt:"2020-08-26T10:51:33.428Z"
+updatedAt:"2020-08-26T10:51:33.428Z"
+day:2
+from:0
+to:86399
+isWorking:true
+
+
+********************************************************
+booking
+
+id:"a2d7059f-2ec3-46ee-8f8d-7b706cd9927e"
+createdAt:"2020-08-26T10:51:33.650Z"
+updatedAt:"2020-08-26T10:51:33.650Z"
+to:10800
+from:7200
+bookingDate:"2020-09-01"
+status:"pending"
+buddy:null
+id:"4cd128f7-ae13-4b03-a961-acf8d668ff41"
+ownerFirstName:"Test first name"
+ownerLastName:"Test last name"
+tool:null
+bookingDayWorkingHours:

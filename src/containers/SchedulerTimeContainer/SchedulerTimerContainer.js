@@ -4,16 +4,20 @@ import SchedulerUnit from "../../components/SchedulerUnit/SchedulerUnit";
 import "./SchedulerTimeContainer.scss";
 import { hoursPerDay } from "../../constant/hoursPerDay";
 
-const SchedulerTimeContainer = ({ resource, date }) => {
+const SchedulerTimeContainer = ({ resource, date,bookings }) => {
+  console.log(bookings)
   const timeColumn = hoursPerDay.map((timeInHour) => (
     <SchedulerUnit>{timeInHour}</SchedulerUnit>
   ));
-
   const resourceBlocks = resource.map((resource) => (
     <div className="calendar-tool-event-container">
       <SchedulerUnit isSelectable>{resource.resourceTitle}</SchedulerUnit>
       {resource.resourceEvent && (
-        <SchedulerEventContainer bookingEvents={resource.bookings} />
+        <SchedulerEventContainer
+          resource={resource}
+          bookingEvents={bookings}
+          date={date}
+        />
       )}
     </div>
   ));
